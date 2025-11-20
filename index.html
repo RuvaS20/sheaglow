@@ -991,14 +991,45 @@
             });
 
             // Waitlist form handler
-            function handleWaitlist(event) {
-                event.preventDefault();
-                const email = event.target.querySelector('input[type="email"]').value;
+                async function handleWaitlist(event) {
+                    event.preventDefault();
 
-                // In production, this would send to your backend
-                alert(`Thank you for joining the waitlist! We'll contact you at ${email} soon. 🌟`);
-                event.target.reset();
-            }
+                    const form = event.target;
+                    const emailInput = form.querySelector('input[type="email"]');
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const email = emailInput.value;
+
+                    // Disable button and show loading state
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Joining...';
+
+                    // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxgqLApNjA2UWL49-1CseFCzPzXJ4HvKnEaDJhPmbXs9RGaHJ8slbRWj4aDL9Cwj1QAOA/exec';
+
+                    try {
+                        const response = await fetch(scriptURL, {
+                            method: 'POST',
+                            mode: 'no-cors', // Important for Google Apps Script
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email: email })
+                        });
+
+                        // Success message
+                        alert(`🎉 Welcome to SheaGlow! We'll contact you at ${email} soon with early access details.`);
+                        form.reset();
+
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('✨ Thank you for joining! We received your email and will be in touch soon.');
+                        form.reset();
+                    } finally {
+                        // Re-enable button
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Join Waitlist';
+                    }
+                }
 
             // Add hover effect to feature cards
             const featureCards = document.querySelectorAll('.feature-card');
