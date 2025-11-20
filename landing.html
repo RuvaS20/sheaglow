@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<!-- saved from url=(0126)file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html -->
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SheaGlow - A Smarter Way to Glow</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./landing_files/css2" rel="stylesheet">
+
+        <style>
+            /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                /* Color Palette - Warm, melanin-inspired tones */
+                --cream: #F5F1E8;
+                --warm-cream: #EDE4D3;
+                --soft-brown: #C9A882;
+                --medium-brown: #A67C52;
+                --rich-brown: #6B4423;
+                --deep-teal: #2C5F5D;
+                --soft-lavender: #D4BFDB;
+                --accent-purple: #9B7EBD;
+                --white: #FFFFFF;
+                --text-dark: #2A2420;
+                --text-medium: #5A4E42;
+                --text-light: #8B7E72;
+
+                /* Typography */
+                --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                --font-accent: 'Crimson Pro', Georgia, serif;
+
+                /* Spacing */
+                --spacing-xs: 0.5rem;
+                --spacing-sm: 1rem;
+                --spacing-md: 2rem;
+                --spacing-lg: 4rem;
+                --spacing-xl: 6rem;
+                --spacing-2xl: 8rem;
+
+                /* Transitions */
+                --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                --transition-quick: all 0.2s ease;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-primary);
+                background-color: var(--cream);
+                color: var(--text-dark);
+                line-height: 1.7;
+                font-size: 16px;
+                overflow-x: hidden;
+            }
+
+            /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-weight: 600;
+                line-height: 1.2;
+                letter-spacing: -0.02em;
+            }
+
+            h1 {
+                font-size: clamp(2.5rem, 6vw, 5rem);
+                font-weight: 700;
+                font-family: var(--font-accent);
+            }
+
+            h2 {
+                font-size: clamp(2rem, 4vw, 3.5rem);
+                font-family: var(--font-accent);
+                margin-bottom: var(--spacing-md);
+            }
+
+            h3 {
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            p {
+                font-size: clamp(1rem, 2vw, 1.125rem);
+                color: var(--text-medium);
+                line-height: 1.8;
+            }
+
+            /* ============================================
+           NAVIGATION
+           ============================================ */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: rgba(245, 241, 232, 0.95);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                padding: var(--spacing-sm) var(--spacing-md);
+                border-bottom: 1px solid rgba(201, 168, 130, 0.2);
+                transition: var(--transition-smooth);
+            }
+
+            nav.scrolled {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 700;
+                font-family: var(--font-accent);
+                color: var(--rich-brown);
+                letter-spacing: -0.03em;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: var(--spacing-md);
+                list-style: none;
+            }
+
+            .nav-links a {
+                color: var(--text-medium);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.95rem;
+                transition: var(--transition-quick);
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--medium-brown);
+                transition: var(--transition-quick);
+            }
+
+            .nav-links a:hover {
+                color: var(--rich-brown);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            /* ============================================
+           BUTTONS
+           ============================================ */
+            .btn {
+                display: inline-block;
+                padding: 1rem 2.5rem;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: var(--transition-smooth);
+                border: none;
+                cursor: pointer;
+                letter-spacing: 0.01em;
+            }
+
+            .btn-primary {
+                background: var(--rich-brown);
+                color: var(--white);
+                box-shadow: 0 4px 20px rgba(107, 68, 35, 0.3);
+            }
+
+            .btn-primary:hover {
+                background: var(--medium-brown);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(107, 68, 35, 0.4);
+            }
+
+            .btn-secondary {
+                background: transparent;
+                color: var(--rich-brown);
+                border: 2px solid var(--rich-brown);
+            }
+
+            .btn-secondary:hover {
+                background: var(--rich-brown);
+                color: var(--white);
+                transform: translateY(-2px);
+            }
+
+            /* ============================================
+           HERO SECTION
+           ============================================ */
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: var(--spacing-2xl) var(--spacing-md);
+                padding-top: calc(var(--spacing-2xl) + 60px);
+                background: linear-gradient(135deg, var(--cream) 0%, var(--warm-cream) 100%);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 800px;
+                height: 800px;
+                background: radial-gradient(circle, rgba(201, 168, 130, 0.15) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: float 20s ease-in-out infinite;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translate(0, 0) scale(1);
+                }
+
+                50% {
+                    transform: translate(-50px, 50px) scale(1.1);
+                }
+            }
+
+            .hero-content {
+                max-width: 1400px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-xl);
+                align-items: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-text {
+                animation: fadeInUp 1s ease-out;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .hero-text .tagline {
+                font-size: clamp(0.9rem, 2vw, 1rem);
+                color: var(--medium-brown);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .hero-text h1 {
+                margin-bottom: var(--spacing-md);
+                color: var(--rich-brown);
+            }
+
+            .hero-text h1 .highlight {
+                font-style: italic;
+                color: var(--medium-brown);
+                display: block;
+            }
+
+            .hero-text p {
+                font-size: clamp(1.1rem, 2vw, 1.25rem);
+                margin-bottom: var(--spacing-lg);
+                max-width: 550px;
+            }
+
+            .hero-cta {
+                display: flex;
+                gap: var(--spacing-sm);
+                flex-wrap: wrap;
+            }
+
+            .hero-image {
+                position: relative;
+                animation: fadeInRight 1s ease-out 0.3s both;
+            }
+
+            @keyframes fadeInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .hero-image-container {
+                position: relative;
+                border-radius: 30px;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+                aspect-ratio: 4/5;
+            }
+
+            .hero-image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* Decorative element */
+            .hero-image::before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: -20px;
+                right: 20px;
+                bottom: 20px;
+                border: 2px solid var(--soft-brown);
+                border-radius: 30px;
+                z-index: -1;
+            }
+
+            /* ============================================
+           SECTIONS
+           ============================================ */
+            section {
+                padding: var(--spacing-2xl) var(--spacing-md);
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: var(--spacing-xl);
+            }
+
+            .section-header .subtitle {
+                font-size: 1rem;
+                color: var(--medium-brown);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .section-header p {
+                max-width: 700px;
+                margin: 0 auto;
+                font-size: 1.125rem;
+            }
+
+            /* ============================================
+           PROBLEM SECTION
+           ============================================ */
+            .problem {
+                background: var(--white);
+                border-radius: 40px;
+                padding: var(--spacing-xl);
+                margin: var(--spacing-xl) var(--spacing-md);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            }
+
+            .problem-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-xl);
+                align-items: center;
+            }
+
+            .problem-stats {
+                display: grid;
+                gap: var(--spacing-md);
+            }
+
+            .stat-card {
+                background: var(--cream);
+                padding: var(--spacing-md);
+                border-radius: 20px;
+                transition: var(--transition-smooth);
+            }
+
+            .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .stat-number {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                font-weight: 700;
+                color: var(--rich-brown);
+                font-family: var(--font-accent);
+                line-height: 1;
+                margin-bottom: var(--spacing-xs);
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                color: var(--text-medium);
+            }
+
+            /* ============================================
+           FEATURES SECTION
+           ============================================ */
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+                margin-top: var(--spacing-xl);
+            }
+
+            .feature-card {
+                background: var(--white);
+                padding: var(--spacing-lg);
+                border-radius: 30px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+                transition: var(--transition-smooth);
+                border: 1px solid transparent;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                border-color: var(--soft-brown);
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, var(--soft-brown) 0%, var(--medium-brown) 100%);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: var(--spacing-md);
+                font-size: 2rem;
+                color: var(--white);
+            }
+
+            .feature-card h3 {
+                color: var(--rich-brown);
+            }
+
+            /* ============================================
+           HOW IT WORKS SECTION
+           ============================================ */
+            .how-it-works {
+                background: linear-gradient(135deg, var(--deep-teal) 0%, #1a4342 100%);
+                color: var(--white);
+                border-radius: 40px;
+                margin: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .how-it-works .section-header h2,
+            .how-it-works .section-header .subtitle {
+                color: var(--white);
+            }
+
+            .how-it-works .section-header p {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .steps {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--spacing-lg);
+                margin-top: var(--spacing-xl);
+            }
+
+            .step {
+                text-align: center;
+                padding: var(--spacing-md);
+                position: relative;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto var(--spacing-md);
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--white);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .step h3 {
+                color: var(--white);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .step p {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            /* ============================================
+           TEAM SECTION
+           ============================================ */
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: var(--spacing-lg);
+                margin-top: var(--spacing-xl);
+            }
+
+            .team-member {
+                background: var(--white);
+                border-radius: 30px;
+                padding: var(--spacing-lg);
+                text-align: center;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+                transition: var(--transition-smooth);
+            }
+
+            .team-member:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .team-photo {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--soft-brown) 0%, var(--medium-brown) 100%);
+                margin: 0 auto var(--spacing-md);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                color: var(--white);
+                font-weight: 600;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .team-member h3 {
+                color: var(--rich-brown);
+                margin-bottom: var(--spacing-xs);
+            }
+
+            .team-role {
+                color: var(--medium-brown);
+                font-weight: 600;
+                font-size: 0.95rem;
+                letter-spacing: 0.05em;
+            }
+
+            /* ============================================
+           CTA SECTION
+           ============================================ */
+            .cta-section {
+                background: linear-gradient(135deg, var(--soft-lavender) 0%, var(--accent-purple) 100%);
+                border-radius: 40px;
+                padding: var(--spacing-xl);
+                margin: var(--spacing-xl) var(--spacing-md);
+                text-align: center;
+                color: var(--white);
+            }
+
+            .cta-section h2 {
+                color: var(--white);
+                margin-bottom: var(--spacing-md);
+            }
+
+            .cta-section p {
+                color: rgba(255, 255, 255, 0.95);
+                font-size: 1.25rem;
+                margin-bottom: var(--spacing-lg);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .waitlist-form {
+                display: flex;
+                gap: var(--spacing-sm);
+                max-width: 500px;
+                margin: 0 auto;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .waitlist-form input {
+                flex: 1;
+                min-width: 250px;
+                padding: 1rem 1.5rem;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50px;
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                color: var(--white);
+                font-size: 1rem;
+                transition: var(--transition-quick);
+            }
+
+            .waitlist-form input::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .waitlist-form input:focus {
+                outline: none;
+                border-color: var(--white);
+                background: rgba(255, 255, 255, 0.25);
+            }
+
+            .waitlist-form button {
+                background: var(--white);
+                color: var(--accent-purple);
+                font-weight: 700;
+            }
+
+            .waitlist-form button:hover {
+                background: var(--cream);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            }
+
+            /* ============================================
+           FOOTER
+           ============================================ */
+            footer {
+                background: var(--rich-brown);
+                color: var(--cream);
+                padding: var(--spacing-lg) var(--spacing-md);
+                text-align: center;
+            }
+
+            footer p {
+                color: rgba(245, 241, 232, 0.8);
+                font-size: 0.95rem;
+            }
+
+            /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .hero-content {
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-lg);
+                }
+
+                .hero-image {
+                    order: -1;
+                }
+
+                .problem-content {
+                    grid-template-columns: 1fr;
+                }
+
+                .hero-cta {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .btn {
+                    text-align: center;
+                }
+
+                section {
+                    padding: var(--spacing-xl) var(--spacing-md);
+                }
+
+                .problem,
+                .how-it-works,
+                .cta-section {
+                    margin: var(--spacing-md);
+                    padding: var(--spacing-lg);
+                }
+            }
+
+            /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+            .fade-in {
+                animation: fadeIn 0.8s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            .mb-lg {
+                margin-bottom: var(--spacing-lg);
+            }
+
+            /* Smooth scroll reveal animations */
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease-out;
+            }
+
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- NAVIGATION -->
+        <nav id="navbar" class="">
+            <div class="nav-container">
+                <div class="logo">SheaGlow</div>
+                <ul class="nav-links">
+                    <li><a
+                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#features">Features</a>
+                    </li>
+                    <li><a
+                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#how-it-works">How
+                            It Works</a></li>
+                    <li><a
+                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#team">Team</a>
+                    </li>
+                    <li><a
+                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#waitlist">Join
+                            Waitlist</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="tagline">AI-Powered Skincare for Melanin-Rich Skin</div>
+                    <h1>
+                        Your Skin Deserves
+                        <span class="highlight">a Smarter Way to Glow</span>
+                    </h1>
+                    <p>SheaGlow combines cutting-edge AI with dermatological expertise to deliver personalized skincare
+                        diagnostics designed specifically for melanin-rich skin tones.</p>
+                    <div class="hero-cta">
+                        <a href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#waitlist"
+                            class="btn btn-primary">Join the Waitlist</a>
+                        <a href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#how-it-works"
+                            class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-container">
+                        <img src="blackglow.jpg" alt="Beautiful woman with melanin-rich skin" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM SECTION -->
+        <section class="problem reveal active">
+            <div class="problem-content">
+                <div class="problem-text">
+                    <div class="subtitle">The Challenge</div>
+                    <h2>Skincare That Doesn't See You</h2>
+                    <p>For decades, skincare diagnostics and AI tools have been trained primarily on lighter skin tones,
+                        leaving melanin-rich skin underserved and misdiagnosed. The result? Ineffective treatments,
+                        frustrated users, and a beauty industry that doesn't reflect the diversity of the people it
+                        serves.</p>
+                    <p style="margin-top: 1.5rem;">It's time for a change. It's time for precision that understands you.
+                    </p>
+                </div>
+                <div class="problem-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">of AI skincare tools are less accurate on darker skin tones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">of melanin-rich skin concerns are misdiagnosed by traditional
+                            diagnostics</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section id="features" class="features reveal active">
+            <div class="section-header">
+                <div class="subtitle">What Makes Us Different</div>
+                <h2>Built for Your Skin, Powered by Science</h2>
+                <p>SheaGlow combines clinical precision with inclusive AI to deliver skincare diagnostics that actually
+                    work for melanin-rich skin.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>AI Trained on Diversity</h3>
+                    <p>Our proprietary AI model is trained exclusively on melanin-rich skin tones, ensuring accurate
+                        detection of hyperpigmentation, dark spots, and texture concerns.</p>
+                </div>
+                <div class="feature-card" style="transform: translateY(0px) scale(1);">
+                    <div class="feature-icon">💡</div>
+                    <h3>Personalized Insights</h3>
+                    <p>Receive tailored skincare recommendations based on your unique skin concerns, tone, and
+                        environmental factors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Track Your Progress</h3>
+                    <p>Monitor your skin's journey over time with detailed analytics and visual comparisons that show
+                        real results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Clinical Accuracy</h3>
+                    <p>Backed by dermatological research and validated by skin experts who specialize in melanin-rich
+                        skin care.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your skin data is encrypted and never shared. We believe your beauty journey should be personal
+                        and secure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Luxury Experience</h3>
+                    <p>A premium, intuitive interface that makes professional skincare analysis accessible from
+                        anywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS SECTION -->
+        <section id="how-it-works" class="how-it-works reveal active">
+            <div class="section-header">
+                <div class="subtitle">Simple, Smart, Effective</div>
+                <h2>Your Journey to Radiant Skin</h2>
+                <p>Getting started with SheaGlow takes just minutes, but the results last a lifetime.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Capture Your Skin</h3>
+                    <p>Take a quick selfie using our guided camera tool designed to capture every detail of melanin-rich
+                        skin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our advanced AI scans your skin for concerns like hyperpigmentation, texture, hydration, and
+                        more.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Report</h3>
+                    <p>Receive a detailed diagnostic report with personalized product recommendations and routines.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track &amp; Glow</h3>
+                    <p>Monitor your progress over time and adjust your routine as your skin transforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section id="team" class="team reveal active">
+            <div class="section-header">
+                <div class="subtitle">Meet the Visionaries</div>
+                <h2>The Minds Behind SheaGlow</h2>
+                <p>A team passionate about building technology that celebrates and serves melanin-rich skin.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">DT</div>
+                    <h3>Daisy Tsenesa</h3>
+                    <div class="team-role">Chief Executive Officer</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">AC</div>
+                    <h3>Aisha Chihuri</h3>
+                    <div class="team-role">Chief Marketing Officer</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">RS</div>
+                    <h3>Ruvarashe Sadya</h3>
+                    <div class="team-role">Chief Technology Officer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / WAITLIST SECTION -->
+        <section id="waitlist" class="cta-section reveal active">
+            <h2>Be the First to Experience SheaGlow</h2>
+            <p>Join our exclusive waitlist and get early access to the future of inclusive skincare diagnostics.</p>
+            <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+                <input type="email" placeholder="Enter your email" required="">
+                <button type="submit" class="btn">Join Waitlist</button>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2024 SheaGlow. All rights reserved. Built with love for melanin-rich skin.</p>
+        </footer>
+
+        <!-- JAVASCRIPT -->
+        <script>
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll reveal animation
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                reveals.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Waitlist form handler
+            function handleWaitlist(event) {
+                event.preventDefault();
+                const email = event.target.querySelector('input[type="email"]').value;
+
+                // In production, this would send to your backend
+                alert(`Thank you for joining the waitlist! We'll contact you at ${email} soon. 🌟`);
+                event.target.reset();
+            }
+
+            // Add hover effect to feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>
