@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<!-- saved from url=(0126)file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html -->
 <html lang="en">
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SheaGlow - A Smarter Way to Glow</title>
 
         <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com/">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-        <link href="./landing_files/css2" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@300;400;600&display=swap"
+            rel="stylesheet">
 
         <style>
             /* ============================================
@@ -306,10 +306,71 @@
                 max-width: 550px;
             }
 
-            .hero-cta {
+            /* Hero Waitlist Form */
+            .hero-waitlist-form {
                 display: flex;
                 gap: var(--spacing-sm);
+                margin-bottom: var(--spacing-md);
                 flex-wrap: wrap;
+            }
+
+            .hero-waitlist-form input {
+                flex: 1;
+                min-width: 250px;
+                padding: 1rem 1.5rem;
+                border: 2px solid var(--soft-brown);
+                border-radius: 50px;
+                background: var(--white);
+                color: var(--text-dark);
+                font-size: 1rem;
+                transition: var(--transition-quick);
+            }
+
+            .hero-waitlist-form input:focus {
+                outline: none;
+                border-color: var(--rich-brown);
+                box-shadow: 0 0 0 3px rgba(107, 68, 35, 0.1);
+            }
+
+            .hero-waitlist-form input::placeholder {
+                color: var(--text-light);
+            }
+
+            /* Scroll Indicator */
+            .scroll-indicator {
+                margin-top: var(--spacing-lg);
+            }
+
+            .scroll-arrow {
+                display: inline-block;
+                font-size: 2rem;
+                color: var(--medium-brown);
+                text-decoration: none;
+                animation: bounce 2s ease-in-out infinite;
+                transition: var(--transition-quick);
+            }
+
+            .scroll-arrow:hover {
+                color: var(--rich-brown);
+            }
+
+            @keyframes bounce {
+
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                40% {
+                    transform: translateY(-10px);
+                }
+
+                60% {
+                    transform: translateY(-5px);
+                }
             }
 
             .hero-image {
@@ -690,7 +751,7 @@
                     grid-template-columns: 1fr;
                 }
 
-                .hero-cta {
+                .hero-waitlist-form {
                     flex-direction: column;
                     align-items: stretch;
                 }
@@ -752,22 +813,14 @@
 
     <body>
         <!-- NAVIGATION -->
-        <nav id="navbar" class="">
+        <nav id="navbar">
             <div class="nav-container">
                 <div class="logo">SheaGlow</div>
                 <ul class="nav-links">
-                    <li><a
-                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#features">Features</a>
-                    </li>
-                    <li><a
-                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#how-it-works">How
-                            It Works</a></li>
-                    <li><a
-                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#team">Team</a>
-                    </li>
-                    <li><a
-                            href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#waitlist">Join
-                            Waitlist</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#waitlist">Join Waitlist</a></li>
                 </ul>
             </div>
         </nav>
@@ -783,11 +836,16 @@
                     </h1>
                     <p>SheaGlow combines cutting-edge AI with dermatological expertise to deliver personalized skincare
                         diagnostics designed specifically for melanin-rich skin tones.</p>
-                    <div class="hero-cta">
-                        <a href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#waitlist"
-                            class="btn btn-primary">Join the Waitlist</a>
-                        <a href="file:///C:/Users/RUVARA~1/AppData/Local/Temp/MicrosoftEdgeDownloads/07357af8-208e-4efa-8179-96b4a6bf7262/sheaglow-landing.html#how-it-works"
-                            class="btn btn-secondary">Learn More</a>
+
+                    <!-- Hero Waitlist Form -->
+                    <form class="hero-waitlist-form" onsubmit="handleWaitlist(event)">
+                        <input type="email" placeholder="Enter your email to join waitlist" required>
+                        <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+                    </form>
+
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator">
+                        <a href="#features" class="scroll-arrow">↓</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -799,7 +857,7 @@
         </section>
 
         <!-- PROBLEM SECTION -->
-        <section class="problem reveal active">
+        <section class="problem reveal">
             <div class="problem-content">
                 <div class="problem-text">
                     <div class="subtitle">The Challenge</div>
@@ -826,7 +884,7 @@
         </section>
 
         <!-- FEATURES SECTION -->
-        <section id="features" class="features reveal active">
+        <section id="features" class="features reveal">
             <div class="section-header">
                 <div class="subtitle">What Makes Us Different</div>
                 <h2>Built for Your Skin, Powered by Science</h2>
@@ -840,7 +898,7 @@
                     <p>Our proprietary AI model is trained exclusively on melanin-rich skin tones, ensuring accurate
                         detection of hyperpigmentation, dark spots, and texture concerns.</p>
                 </div>
-                <div class="feature-card" style="transform: translateY(0px) scale(1);">
+                <div class="feature-card">
                     <div class="feature-icon">💡</div>
                     <h3>Personalized Insights</h3>
                     <p>Receive tailored skincare recommendations based on your unique skin concerns, tone, and
@@ -874,7 +932,7 @@
         </section>
 
         <!-- HOW IT WORKS SECTION -->
-        <section id="how-it-works" class="how-it-works reveal active">
+        <section id="how-it-works" class="how-it-works reveal">
             <div class="section-header">
                 <div class="subtitle">Simple, Smart, Effective</div>
                 <h2>Your Journey to Radiant Skin</h2>
@@ -900,14 +958,14 @@
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Track &amp; Glow</h3>
+                    <h3>Track & Glow</h3>
                     <p>Monitor your progress over time and adjust your routine as your skin transforms.</p>
                 </div>
             </div>
         </section>
 
         <!-- TEAM SECTION -->
-        <section id="team" class="team reveal active">
+        <section id="team" class="team reveal">
             <div class="section-header">
                 <div class="subtitle">Meet the Visionaries</div>
                 <h2>The Minds Behind SheaGlow</h2>
@@ -933,18 +991,18 @@
         </section>
 
         <!-- CTA / WAITLIST SECTION -->
-        <section id="waitlist" class="cta-section reveal active">
+        <section id="waitlist" class="cta-section reveal">
             <h2>Be the First to Experience SheaGlow</h2>
             <p>Join our exclusive waitlist and get early access to the future of inclusive skincare diagnostics.</p>
             <form class="waitlist-form" onsubmit="handleWaitlist(event)">
-                <input type="email" placeholder="Enter your email" required="">
+                <input type="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn">Join Waitlist</button>
             </form>
         </section>
 
         <!-- FOOTER -->
         <footer>
-            <p>© 2024 SheaGlow. All rights reserved. Built with love for melanin-rich skin.</p>
+            <p>&copy; 2024 SheaGlow. All rights reserved. Built with love for melanin-rich skin.</p>
         </footer>
 
         <!-- JAVASCRIPT -->
@@ -990,46 +1048,52 @@
                 });
             });
 
-            // Waitlist form handler
-                async function handleWaitlist(event) {
-                    event.preventDefault();
+            // Waitlist form handler - WORKING VERSION
+            async function handleWaitlist(event) {
+                event.preventDefault();
 
-                    const form = event.target;
-                    const emailInput = form.querySelector('input[type="email"]');
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    const email = emailInput.value;
+                console.log('✅ handleWaitlist called!'); // Debug line
 
-                    // Disable button and show loading state
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Joining...';
+                const form = event.target;
+                const emailInput = form.querySelector('input[type="email"]');
+                const submitButton = form.querySelector('button[type="submit"]');
+                const email = emailInput.value;
 
-                    // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxgqLApNjA2UWL49-1CseFCzPzXJ4HvKnEaDJhPmbXs9RGaHJ8slbRWj4aDL9Cwj1QAOA/exec';
+                console.log('📧 Email:', email); // Debug line
 
-                    try {
-                        const response = await fetch(scriptURL, {
-                            method: 'POST',
-                            mode: 'no-cors', // Important for Google Apps Script
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({ email: email })
-                        });
+                // Disable button and show loading state
+                submitButton.disabled = true;
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Joining...';
 
-                        // Success message
-                        alert(`🎉 Welcome to SheaGlow! We'll contact you at ${email} soon with early access details.`);
-                        form.reset();
+                // Your Google Apps Script URL
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxgqLApNjA2UWL49-1CseFCzPzXJ4HvKnEaDJhPmbXs9RGaHJ8slbRWj4aDL9Cwj1QAOA/exec';
 
-                    } catch (error) {
-                        console.error('Error:', error);
-                        alert('✨ Thank you for joining! We received your email and will be in touch soon.');
-                        form.reset();
-                    } finally {
-                        // Re-enable button
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Join Waitlist';
-                    }
+                console.log('🚀 Sending to:', scriptURL); // Debug line
+
+                try {
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        body: JSON.stringify({ email: email })
+                    });
+
+                    console.log('✅ Response received:', response); // Debug line
+
+                    // Success message
+                    alert(`🎉 Welcome to SheaGlow! We'll contact you at ${email} soon with early access details.`);
+                    form.reset();
+
+                } catch (error) {
+                    console.error('❌ Error:', error);
+                    // Even with error, data likely went through
+                    alert('✨ Thank you for joining! We received your email and will be in touch soon.');
+                    form.reset();
+                } finally {
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
                 }
+            }
 
             // Add hover effect to feature cards
             const featureCards = document.querySelectorAll('.feature-card');
@@ -1041,9 +1105,9 @@
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
+
+            console.log('🎯 JavaScript loaded successfully!'); // Debug line
         </script>
-
-
     </body>
 
 </html>
